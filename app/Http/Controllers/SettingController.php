@@ -109,7 +109,7 @@ class SettingController extends Controller
             ])['filename'];
             \App\Models\Setting::query()->update(['website_cover'=>$file]);
         }
-        notify()->success('تم تحديث الإعدادات بنجاح','عملية ناجحة');
+        notify()->success('Settings updated successfully','Successful Operation');
         return redirect()->back();
 
     }

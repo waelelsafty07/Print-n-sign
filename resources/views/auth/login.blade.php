@@ -15,12 +15,12 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                        
-                        <div class="col-12 p-0 mb-5" style="width: 550px;max-width: 100%;margin: 0px auto;">
-                            <h3 class="mb-4">{{ __('lang.login') }}</h3>
+                        <div class="col-12 p-0 mb-5" style="width: 100%;max-width: 100%;">
+                            <h3 class="mb-4">Login</h3>
                              <div class="divider"></div>
                         </div>
                         <div class="form-group row mb-3 ">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('lang.email') }}</label>
+                            <label for="email" class="col-md-2 col-form-label text-md-end" style="margin: 0 0 0 8rem;">Email</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group row mb-3 ">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('lang.password') }}</label>
+                            <label for="password" class="col-md-2 col-form-label text-md-end" style="margin: 0 0 0 8rem;">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -50,29 +50,32 @@
                         <div class="form-group row mb-3 ">
                             <div  class="col-md-4 col-form-label text-md-end"></div>
                             <div class="col-md-6">
-                                <input class="form-check-input ms-2 me-0" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} style="position:relative;">
+                                <input class="form-check-input ml-2 me-0" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} style="position:relative;float: right; ">
 
-                                <label class="form-check-label" for="remember" style="position:relative;">
-                                    {{ __('lang.remember_me') }}
+                                <label class="form-check-label" for="remember" style="position:relative;float: right;">
+                                   remamber me
                                 </label>
                             </div>
                         </div>
  
 
                         <div class="form-group row mb-3  mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-4 ">
+
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('lang.login') }}
+                                   Login
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('lang.forget_your_password') }}
+                                
+                            </div>
+                            @if (Route::has('password.request'))
+                                    <a class="btn btn-link text-center" href="{{ route('password.request') }}">
+                                       I forgot my password
                                     </a>
                                 @endif
-                            </div>
                         </div>
                     </form>
+                    
                 </div>
         </div>
     </div>

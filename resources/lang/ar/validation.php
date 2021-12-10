@@ -12,8 +12,8 @@
 */
 
 return [
-    'accepted'             => 'يجب قبول :attribute.',
-    'accepted_if'          => 'يجب قبول :attribute في حالة :other يساوي :value.',
+    'accepted'             => 'You must :attribute.',
+    'accepted_if'          => 'You must :attribute في حالة :other يساوي :value.',
     'active_url'           => 'حقل :attribute لا يُمثّل رابطًا صحيحًا.',
     'after'                => 'يجب على حقل :attribute أن يكون تاريخًا لاحقًا للتاريخ :date.',
     'after_or_equal'       => 'حقل :attribute يجب أن يكون تاريخاً لاحقاً أو مطابقاً للتاريخ :date.',

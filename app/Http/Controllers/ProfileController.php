@@ -39,7 +39,10 @@ class ProfileController extends Controller
                     'watermark'=>true,
                     'compress'=>'auto',
                 ])['filename'];
+
             $this->use_hub_file($file, $user->id, auth()->user()->id);
+            $this->remove_hub_file($user->avatar);
+            
             $user->update([
                 'avatar'=>$file
             ]);
@@ -52,7 +55,7 @@ class ProfileController extends Controller
             'name'=>$request->name,
             'bio'=>$request->bio
         ]);
-        notify()->info('عملية ناجحة','تمت العملية بنجاح');
+        notify()->success('Successful Operation','Operation Accomplished Successfully');
         //emotify('info','تمت العملية بنجاح');
         return redirect()->back();
     }
@@ -89,10 +92,10 @@ class ProfileController extends Controller
             auth()->user()->update([
                 'password'=>Hash::make($request->password)
             ]);
-            notify()->success('تم تغيير كلمة المرور بنجاح','عملية ناجحة');
+            notify()->success('Password changed successfully','Successful Operation');
             return redirect()->back();
         }else{
-            notify()->error('كلمة المرور الحالية التي أدخلتها غير صحيحة','عملية غير ناجحة');
+            notify()->error('The current password you entered is incorrect','Unsuccessful Operation');
             return redirect()->back();
         }  
     }
@@ -104,7 +107,7 @@ class ProfileController extends Controller
         auth()->user()->update([
             'email'=>$request->email
         ]);
-        notify()->success('تمت عملية تغيير البريد الالكتروني بنجاح','عملية ناجحة');
+        notify()->success('The email has been changed successfully','Successful Operation');
         return redirect()->back();
     }
     

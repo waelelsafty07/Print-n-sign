@@ -14,7 +14,7 @@
         changeInput: '<div class="fileuploader-input mb-2">' +
                           '<div class="fileuploader-input-inner">' +
                               '<div class="fileuploader-icon-main"></div>' +
-                              '<h3 class="fileuploader-input-caption"><span>قم بإرفاق الملفات</span></h3>' +
+                              '<h3 class="fileuploader-input-caption"><span>Attach files</span></h3>' +
                               '<p>${captions.or}</p>' +
                               '<button type="button" class="fileuploader-input-button"><span>${captions.button}</span></button>' +
                           '</div>' +
@@ -24,39 +24,39 @@
 
         captions: {
             button: function(options) {
-                return 'تصفح ' + (options.limit == 1 ? 'ملف' : 'ملفات');
+                return 'browse ' + (options.limit == 1 ? 'file' : 'files');
             },
             feedback: function(options) {
-                return 'اختر ' + (options.limit == 1 ? '1' : 'ملف') + ' للرفع';
+                return 'choose ' + (options.limit == 1 ? '1' : 'file') + ' Upload';
             },
             feedback2: function(options) {
-                return options.length + ' ' + (options.length > 1 ? 'ملفات هنا' : 'ملفات كانت') + ' مختارة';
+                return options.length + ' ' + (options.length > 1 ? 'files here' : 'files were') + ' selected';
             },
-            confirm: 'تأكيد',
-            cancel: 'الغاء',
-            name: 'الاسم',
-            type: 'النوع',
-            size: 'الحجم',
-            dimensions: 'الأبعاد',
-            duration: 'المدة',
-            crop: 'اقتصاص',
-            rotate: 'تدوير',
-            sort: 'ترتيب',
-            download: 'تحميل',
-            remove: 'حذف',
-            drop: 'قم بافلات الملفات هنا للرفع',
-            paste: '<div class="fileuploader-pending-loader"></div> ملف تالف اضغط للحذف.',
-            removeConfirmation: 'هل أنت متأكد من حذف الملف ?',
+            confirm: 'Confirm',
+            cancel: 'Cancel',
+            name: 'Name',
+            type: 'Type',
+            size: 'Size',
+            dimensions: 'Dimensions',
+            duration: 'Duration',
+            crop: 'Crop',
+            rotate: 'Rotate',
+            sort: 'Sorting',
+            download: 'download',
+            remove: 'Delete',
+            drop: 'Drop files here for upload',
+            paste: '<div class="fileuploader-pending-loader"></div> Corrupt file Click to delete.',
+            removeConfirmation: 'Are you sure to delete the file?',
             errors: {
                 filesLimit: function(options) {
                     return 'فقط ${limit} ' + (options.limit == 1 ? 'ملف' : 'ملفات') + ' يمكن رفعها.'
                 },
-                filesType: 'فقط ${extensions} الانواع السابقة من الملفات التي يمكن رفعها.',
-                fileSize: '${name} حجمه كبير جداً! يمكن رفع ملفات لحد أقصى ${fileMaxSize}MB.',
-                filesSizeAll: 'الملفات المستخدمة كبيرة للغاية! من فضلك قم بإختيار ملفات لحد اقصى ${maxSize} MB.',
-                fileName: 'الملف بالاسم ${name} مستخدم من قبل.',
-                remoteFile: 'دوران الملف غير مسموح به.',
-                folderUpload: 'ملفات غير مدعومة.'
+                filesType: 'Only ${extensions} above types of files can be uploaded.',
+                fileSize: '${name} is too big! Up to ${fileMaxSize}MB files can be uploaded.',
+                filesSizeAll: 'The files used are too big! Please select files with a maximum of ${maxSize} MB.',
+                fileName: 'The file with the name ${name} is already in use.',
+                remoteFile: 'File rotation is not allowed.',
+                folderUpload: 'Unsupported files.'
             }
         },
 
@@ -117,7 +117,7 @@
                 }
                 
                 item.upload.status != 'cancelled' && item.html.find('.fileuploader-action-retry').length == 0 ? item.html.find('.column-actions').prepend(
-                    '<button type="button" class="fileuploader-action fileuploader-action-retry text-center" style="background:#03A9F4;border-radius:50%;margin-left:10px;" title="اعادة المحاولة"><i class="far fa-redo-alt font-1" style="color:#fff;position: relative;left: 0px;top: -5px;padding: 1px;"></i></button>'
+                    '<button type="button" class="fileuploader-action fileuploader-action-retry text-center" style="background:#03A9F4;border-radius:50%;margin-left:10px;" title="Try Again"><i class="far fa-redo-alt font-1" style="color:#fff;position: relative;left: 0px;top: -5px;padding: 1px;"></i></button>'
                 ) : null;
             },
             onProgress: function(data, item) {
@@ -147,11 +147,11 @@
             });
         },
         captions: $.extend(true, {}, $.fn.fileuploader.languages['en'], {
-            feedback: 'اضغط او قم بالسحب و الافلات هنا',
-            feedback2: 'رفع المزيد',
-            drop: 'قم بإفلات الملفات',
-            or: 'او',
-            button: 'تصفح الملفات',
+            feedback: 'Click or drag and drop here',
+            feedback2: 'upload more',
+            drop: 'Drop files',
+            or: 'or',
+            button: 'Browse files',
         })
 
     }); 

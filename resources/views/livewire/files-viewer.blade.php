@@ -12,7 +12,7 @@
             @if(count($files)==0)
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 300px;">
                 <div class="col-12 d-inline-block text-center">
-                    <span class="fal fa-images font-12" style="color:#ff9800"></span><br><br> <span class="fas fa-info-circle"></span>  لا يوجد ملفات
+                    <span class="fal fa-images font-12" style="color:#ff9800"></span><br><br> <span class="fas fa-info-circle"></span>  Not Found File
                 </div>
             </div>
             @endif
@@ -23,8 +23,8 @@
         </div>
         @endif
         <div class="col-12 py-2 px-3 d-flex justify-content-end mb-3">
-            <span class="d-inline-block btn btn-light btn-sm mx-2" data-bs-dismiss="modal">تراجع</span>
-            <span class="d-inline-block btn btn-primary btn-sm" id="selected-files-insert-btn" data-bs-dismiss="modal"><span class="far fa-check-circle"></span> إختر الملفات</span>
+            <span class="d-inline-block btn btn-light btn-sm mx-2" data-bs-dismiss="modal">Back</span>
+            <span class="d-inline-block btn btn-primary btn-sm" id="selected-files-insert-btn" data-bs-dismiss="modal"><span class="far fa-check-circle"></span> Choose files</span>
         </div>
     </div>
 </div>

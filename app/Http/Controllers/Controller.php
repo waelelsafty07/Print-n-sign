@@ -53,6 +53,7 @@ class Controller extends BaseController
 
     public function store_file($options)
     {   
+        
         $validation=Validator::make($options, [ 'source' => "required|mimes:".$this->get_validations($options["validation"])."|max:250000"]);  if($validation->fails()) {
             $file=$options['source'];
             $filename='';
@@ -191,10 +192,12 @@ class Controller extends BaseController
      }
     public function remove_hub_file($name)
     {
+        
         $get_file = \App\Models\HubFile::where('name', $name)->first();
+
         if (null != $get_file && ( ($get_file['user_id'] == \Auth::user()->id ) ) ) {
-            $get_file->delete(); 
-            return ['success' => true, 'filename' => $name];
+                $get_file->delete(); 
+                return ['success' => true, 'filename' => $name];
         }
 
         return ['success' => false, 'filename' => $name];

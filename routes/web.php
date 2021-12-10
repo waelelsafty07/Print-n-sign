@@ -9,6 +9,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\SubcategoriesController;
 
 
 
@@ -24,11 +26,13 @@ Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->
     //Route::get('/profile',[AdminController::class,'upload_image']);
     
     Route::resource('articles',ArticleController::class);
+    
     Route::prefix('upload')->name('upload.')->group(function(){
         Route::post('/image',[HelperController::class,'upload_image'])->name('image');
         Route::post('/file',[HelperController::class,'upload_file'])->name('file');
         Route::post('/remove-file',[HelperController::class,'remove_files'])->name('remove-file');
     });
+
     Route::prefix('profile')->name('profile.')->group(function () {
         Route::get('/',[ProfileController::class,'index'])->name('index');
         Route::get('/edit',[ProfileController::class,'edit'])->name('edit');
@@ -45,6 +49,30 @@ Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->
         Route::get('/',[SettingController::class,'index'])->name('index');
         Route::put('/update',[SettingController::class,'update'])->name('update');
     });
+
+    Route::prefix('categories')->name('categories.')->group(function () {
+        Route::get('/',[CategoriesController::class,'index'])->name('index');
+        Route::get('/create',[CategoriesController::class,'create'])->name('create');
+        Route::get('/edit/{id}',[CategoriesController::class,'edit'])->name('edit');
+        Route::put('/edit/{id}/edit',[CategoriesController::class,'update'])->name('update');
+        Route::post('/post',[CategoriesController::class,'store'])->name('store');
+        Route::delete('/delete',[CategoriesController::class,'multiple'])->name('multiple');
+        Route::delete('/deleteOne/{id}',[CategoriesController::class,'destroy'])->name('destroy');
+        // Route::put('/update',[SettingController::class,'update'])->name('update');
+        //Route SubCategories
+        Route::prefix('subcategory')->name('subcategory.')->group(function(){
+            Route::get('/{id}',[SubcategoriesController::class,'index'])->name('index');
+            Route::get('/{id}/create',[SubcategoriesController::class,'create'])->name('create');
+            Route::post('/post',[SubcategoriesController::class,'store'])->name('store');
+            Route::get('/edit/{id}',[SubcategoriesController::class,'edit'])->name('edit');
+            Route::put('/edit/{id}/edit',[SubcategoriesController::class,'update'])->name('update');
+            Route::delete('/delete',[SubcategoriesController::class,'multiple'])->name('multiple');
+            Route::delete('/deleteOne/{id}',[SubcategoriesController::class,'destroy'])->name('destroy');
+        });
+
+    });
+
+     
 });
 
 

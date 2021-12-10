@@ -14,9 +14,12 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
+        "laravelcollective/html": "^6.2",
         "livewire/livewire": "^2.7",
         "mckenziearts/laravel-notify": "^2.2",
-        "nesbot/carbon": "^2.54"
+        "nesbot/carbon": "^2.54",
+        "yajra/laravel-datatables": "^1.5",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

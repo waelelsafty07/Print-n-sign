@@ -13,7 +13,7 @@
 
 .dash *:not(.fileuploader):not([class^="fileuploader-icon-"]):not([class^="fa"]):not(.cairo):not([class^="vj"]):not([class^="tie-"]){
 	font-family: 'Helvet',arial!important; 
-    direction: rtl; 
+    direction: ltr; 
 }
 .row{
     margin: 0px!important;
@@ -39,7 +39,7 @@ th {
     z-index: 11;
 }
 .ml-4.flex-1 {
-    margin-left: 0px;
+    margin-left: 6px;
     margin-right: 30px !important;
 }
 thead th {
@@ -61,7 +61,7 @@ thead th {
 }
 .main-content {
     width: calc(100% - 280px);
-    margin-right: 280px;
+    margin-left: 280px;
 }
 .top-nav {
     width: calc(100% - 280px);
@@ -73,10 +73,10 @@ thead th {
     font-size: 16px;
 }
 .aside.active {
-    right: 0px;
+    left: 0px;
 }
 .aside.in-active {
-    right: -280px;
+    left: -280px;
 }
 .item {
     padding: 12px 0px 15px 0px;
@@ -88,29 +88,32 @@ thead th {
 @media (max-width: 700px) {
     .main-content {
         width: 100% !important;
-        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+    .main-content.active {
+        margin-left: 280px !important;
     }
     .top-nav {
         width: 100% !important;
     }
     .aside {
-        right: -280px;
+        left: -280px;
     }
     .aside.active {
-        right: -280px;
+        left: -280px;
     }
     .aside.in-active {
-        right: 0px;
+        left: 0px;
     }
 }
 @media (min-width: 700px) {
     .main-content.active {
         width: 100% !important;
-        margin-right: 0px !important
+        margin-left: 0px !important
     }
 }
-.ck[dir=rtl],
-.ck[dir=rtl],
+.ck[dir=ltr],
+.ck[dir=ltr],
 .ck,
 .ck * {
     text-align: right;
@@ -362,4 +365,7 @@ label.error{
 }
 .fileuploader-item {
     z-index: 0;
+}
+.modal-header .btn-close {
+    margin: -0.5rem -0.5rem -0.5rem auto;
 }

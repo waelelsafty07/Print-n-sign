@@ -27,9 +27,9 @@
         $unreadNotifications=auth()->user()->unreadNotifications()->count();
         @endphp
     @endif
-    <title>لوحة تحكم | {{$settings->website_name}}</title>
-    <meta name="title" content="{{ config('app.name', 'Laravel') }}">
-    <link rel="icon" type="image/png" href="{{env('DEFAULT_IMAGE_LOGO')}}" />
+    <title>Dashboard | {{$settings->website_name}}</title>
+    <meta name="title" content="Dashboard | {{$settings->website_name}}">
+    <link rel="icon" type="image/png" href="{{$settings->website_icon()}}" />
 </head>
 
 <body style="background: #f7f7f7" class="dash">
@@ -37,8 +37,8 @@
     <x:notify-messages />
     <div class="col-12 justify-content-end d-flex">
         @if($errors->any())
-        <div class="col-12" style="position: absolute;top: 80px;left: 10px;">
-            {!! implode('', $errors->all('<div class="alert-click-hide alert alert-danger alert alert-danger col-9 col-xl-3 rounded-0 mb-1" style="position: fixed!important;z-index: 11;opacity:.9;left:25px;cursor:pointer;" onclick="$(this).fadeOut();">:message</div>')) !!}
+        <div class="col-12" style="position: absolute;top: 80px;right: 10px;">
+            {!! implode('', $errors->all('<div class="alert-click-hide alert alert-danger alert alert-danger col-9 col-xl-3 rounded-0 mb-1" style="position: fixed!important;z-index: 11;opacity:.9;right:25px;cursor:pointer;" onclick="$(this).fadeOut();">:message</div>')) !!}
         </div>
         @endif
     </div>
@@ -49,7 +49,7 @@
         <div class="col-12 px-0 d-flex row">
 
             <div class="col-10 px-3 py-3">
-                <span class="fal fa-info-circle"></span>    إختر من الملفات
+                <span class="fal fa-info-circle"></span>   Choose from files
             </div>
             <div class="col-2 px-3 align-items-center d-flex justify-content-end">
                 <span class="far fa-times font-2 cursor-pointer mx-2" data-bs-dismiss="modal"></span>
@@ -78,7 +78,7 @@
             <div class="col-12 px-0 d-flex" style="height: 60px;background: #1a2d4d">
                 <div class="col-12 px-2 font-3  d-flex  justify-content-center pt-md-1" style="color: #fff">
                     <span class="fal fa-chart-pie font-4 pt-3 d-inline-block "></span>
-                    <span class="d-inline-block px-2 pt-2">لوحة التحكم</span> 
+                    <span class="d-inline-block px-2 pt-2">Dashboard</span> 
                     <div class="d-flex d-md-none justify-content-center align-items-center px-0   asideToggle" style="width: 60px;height: 60px;">
                         <span class="fal fa-bars font-4 cursor-pointer"></span>
                     </div>
@@ -89,7 +89,7 @@
             <img src="{{auth()->user()->getUserAvatar()}}" style="width: 55px;height: 55px;color: #fff;border-radius: 50%" class="d-inline-block">
                 </a>
                 <div class="col-12 px-0 mt-2" style="color: #fff">
-                    مرحباً {{auth()->user()->name}}
+                    WELCOME {{auth()->user()->name}}
                 </div> 
             </div>
             <div class="col-12 px-0">
@@ -101,117 +101,38 @@
                                 <span class="fal fa-home font-3"> </span> 
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2">
-                                الرئيسية
+                                Main
                             </div> 
                         </div>
                     </a>
-                    {{-- <a href="#" class="col-12 px-0">
+                    <a href="{{route('admin.categories.index')}}" class="col-12 px-0">
                         <div class="col-12 item px-0 d-flex " >
                             <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-users font-3"> </span> 
+                            <i class="fal fa-caret-right font-3"></i>
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2">
-                                المستخدمين
+                               Categories
                             </div> 
                         </div>
                     </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fab fa-youtube font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                الدورات التعليمية
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fas fa-hands-helping font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                شركاء النجاح
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-box-full font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                الكورسات
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-play font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                الفيديوهات
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-stars font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                التقييمات
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-box-check font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                الطلبات
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-sack-dollar font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                عمليات الدفع
-                            </div> 
-                        </div>
-                    </a>
-                    <a href="#" class="col-12 px-0">
-                        <div class="col-12 item px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-book font-3"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2">
-                                مقالات - أخبار
-                            </div> 
-                        </div>
-                    </a> --}}
                     <a href="{{route('admin.settings.index')}}" class="col-12 px-0">
                         <div class="col-12 item px-0 d-flex " >
                             <div style="width: 50px" class="px-3 text-center">
                                 <span class="fal fa-wrench font-3"> </span> 
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2">
-                               الإعدادات
+                               Settings
                             </div> 
                         </div>
                     </a>
+                    
                     <a href="#" class="col-12 px-0" onclick="document.getElementById('logout-form').submit();">
                         <div class="col-12 item px-0 d-flex " >
                             <div style="width: 50px" class="px-3 text-center">
                                 <span class="fal fa-sign-out-alt font-3"> </span> 
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2">
-                               تسجيل خروج
+                               Logout
                             </div> 
                         </div>
                     </a>
@@ -245,7 +166,7 @@
                             <div class="col-12 d-flex border-top"> 
                                 <a href="{{route('admin.notifications.index')}}" class="d-block py-2 px-3 ">
                                     <div class="col-12 align-items-center">
-                                      <span class="fal fa-bells"></span>  عرض كل الإشعارات
+                                        View All Notifications <span class="fal fa-bells"></span>
                                     </div>
                                 </a>
                             </div>
@@ -256,11 +177,11 @@
                             <img src="{{auth()->user()->getUserAvatar()}}" style="padding: 10px;border-radius: 50%;width: 60px;height: 60px;">
                         </div>
                         <ul class="dropdown-menu shadow border-0" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item font-1" href="/" target="_blank"><span class="fal fa-desktop font-1"></span> عرض الموقع</a></li>
-                                <li><a class="dropdown-item font-1" href="{{route('admin.profile.index')}}"><span class="fal fa-user font-1"></span> ملفي الشخصي</a></li>
-                                <li><a class="dropdown-item font-1" href="{{route('admin.profile.edit')}}"><span class="fal fa-edit font-1"></span> تعديل ملفي الشخصي</a></li> 
-                                <li><hr style="height: 1px;margin: 10px 0px 5px;"></li>
-                                <li><a class="dropdown-item font-1" href="#" onclick="document.getElementById('logout-form').submit();"><span class="fal fa-sign-out-alt font-1"></span> تسجيل خروج</a></li>
+                                <li style="text-align: left"><a class="dropdown-item font-1" href="/" target="_blank"><span class="fal fa-desktop font-1"></span> View Website</a></li>
+                                <li style="text-align: left"><a class="dropdown-item font-1" href="{{route('admin.profile.index')}}"><span class="fal fa-user font-1"></span> Profile</a></li>
+                                <li style="text-align: left"><a class="dropdown-item font-1" href="{{route('admin.profile.edit')}}"><span class="fal fa-edit font-1"></span> Edite My Profile</a></li> 
+                                <li style="text-align: left"><hr style="height: 1px;margin: 10px 0px 5px;"></li>
+                                <li style="text-align: left"><a class="dropdown-item font-1" href="#" onclick="document.getElementById('logout-form').submit();"><span class="fal fa-sign-out-alt font-1"></span> Logout</a></li>
                         </ul>
 
                     </div>
@@ -291,5 +212,7 @@
     @notifyJs
     @include('layouts.scripts')
     @yield('scripts')
+    <!-- fjkgjkjgkdjg -->
+    @stack('js')
 </body>
 </html>

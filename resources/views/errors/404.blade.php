@@ -8,7 +8,7 @@
 				<div class="row align-items-center py-5 main-nafez-box-styles" style=";border-radius: 12px">
 					<div class="col text-center py-5">
 						<span class="fal fa-exclamation-triangle font-12 pb-4" style="color: var(--bg-color-4)"></span>
-						<h4 class="text-center">404 | الصفحة المطلوبة غير متوفرة</h4>
+						<h4 class="text-center">404 | The requested page is not available</h4>
 						<br>
 						<div class="col-12 text-center px-2" dir="ltr" style="padding-top: 8px;">
 						<a href="/" class="d-inline-block ">

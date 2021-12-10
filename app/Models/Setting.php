@@ -11,6 +11,7 @@ class Setting extends Model
     protected $guarded = ['id','created_at','updated_at'];
 
     public function website_logo(){
+
         if($this->website_logo==null)
             return env('DEFAULT_IMAGE_LOGO');
         else
@@ -34,9 +35,5 @@ class Setting extends Model
         else
             return env('STORAGE_URL').'/uploads/website/'.$this->website_icon;
     }
-
-    
-
-    
 
 }

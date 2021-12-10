@@ -44,7 +44,7 @@ rel='group_msg_attach_{{$u_id}}'
             {{ substr($attachment->name,-20)}}
         </span>
         <span class="d-inline-block font-small naskh"  style="color: var(--bg-font-4);position: relative;top: -2px">
-            [ {{ round($attachment->size/(1024*1024),1)}} ميجا ]
+            [ {{ round($attachment->size/(1024*1024),1)}} MB ]
         </span>
     </div>
   @elseif(in_array($attachment->extension,$voice_extensions)) 

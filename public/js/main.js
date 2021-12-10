@@ -6,28 +6,28 @@ var favicon = new Favico({
     fontFamily: 'sans',
     type: 'circle'
 });
-$("#validate-form").validate({ignore: [],});
-document.addEventListener("DOMContentLoaded", function(event) {
-   $.extend( $.validator.messages, {
-        required: "برجاء ملئ هذا الحقل",
-        remote: "يرجى تصحيح هذا الحقل للمتابعة",
-        email: "رجاء إدخال عنوان بريد إلكتروني صحيح",
-        url: "رجاء إدخال عنوان موقع إلكتروني صحيح",
-        date: "رجاء إدخال تاريخ صحيح",
-        dateISO: "رجاء إدخال تاريخ صحيح (ISO)",
-        number: "رجاء إدخال عدد بطريقة صحيحة",
-        digits: "رجاء إدخال أرقام فقط",
-        creditcard: "رجاء إدخال رقم بطاقة ائتمان صحيح",
-        equalTo: "رجاء إدخال نفس القيمة",
-        extension: "رجاء إدخال ملف بامتداد موافق عليه",
-        maxlength: $.validator.format( "الحد الأقصى لعدد الحروف هو {0}" ),
-        minlength: $.validator.format( "الحد الأدنى لعدد الحروف هو {0}" ),
-        rangelength: $.validator.format( "عدد الحروف يجب أن يكون بين {0} و {1}" ),
-        range: $.validator.format( "رجاء إدخال عدد قيمته بين {0} و {1}" ),
-        max: $.validator.format( "رجاء إدخال عدد أقل من أو يساوي {0}" ),
-        min: $.validator.format( "رجاء إدخال عدد أكبر من أو يساوي {0}" )
-    });
-});
+// $("#validate-form").validate({ignore: [],});
+// document.addEventListener("DOMContentLoaded", function(event) {
+//    $.extend( $.validator.messages, {
+//         required: "برجاء ملئ هذا الحقل",
+//         remote: "يرجى تصحيح هذا الحقل للمتابعة",
+//         email: "رجاء إدخال عنوان بريد إلكتروني صحيح",
+//         url: "رجاء إدخال عنوان موقع إلكتروني صحيح",
+//         date: "رجاء إدخال تاريخ صحيح",
+//         dateISO: "رجاء إدخال تاريخ صحيح (ISO)",
+//         number: "رجاء إدخال عدد بطريقة صحيحة",
+//         digits: "رجاء إدخال أرقام فقط",
+//         creditcard: "رجاء إدخال رقم بطاقة ائتمان صحيح",
+//         equalTo: "رجاء إدخال نفس القيمة",
+//         extension: "رجاء إدخال ملف بامتداد موافق عليه",
+//         maxlength: $.validator.format( "الحد الأقصى لعدد الحروف هو {0}" ),
+//         minlength: $.validator.format( "الحد الأدنى لعدد الحروف هو {0}" ),
+//         rangelength: $.validator.format( "عدد الحروف يجب أن يكون بين {0} و {1}" ),
+//         range: $.validator.format( "رجاء إدخال عدد قيمته بين {0} و {1}" ),
+//         max: $.validator.format( "رجاء إدخال عدد أقل من أو يساوي {0}" ),
+//         min: $.validator.format( "رجاء إدخال عدد أكبر من أو يساوي {0}" )
+//     });
+// });
 Fancybox.bind("[data-fancybox]", {});
 Fancybox.bind("img.data-fancybox", {});
 Fancybox.bind(".data-fancybox img", {});
@@ -43,3 +43,44 @@ $('.alert-click-hide').on('click', function() {
 });
 toastr.options = {progressBar:true,preventDuplicates:true,newestOnTop:true,positionClass:'toast-top-left',timeOut:10000}
 let smart_alert = toastr;
+
+
+function checkall()
+  {
+    $('input[class="item_checked"]:checkbox').each(function(){
+      if($('input[class="checkall"]:checkbox:checked').length == 0)
+      {
+        $(this).prop('checked',false);
+      }else
+      {
+        $(this).prop('checked',true);
+      }
+    });
+  }
+
+  function delete_all()
+  {
+    $(document).on('click','.btn-delete-all',function(){
+      $(document).on('click','#del_all',function(){
+        $('#form_data').submit();
+      });
+      $(document).on('click','#del_all',function(){
+        $('#form_data').submit();
+      });
+      var item_checked = $('input[class="item_checked"]:checkbox:checked').length;
+      if(item_checked > 0)
+      {
+        $('.record_count').text(item_checked);
+        $('.not-empty').removeClass('d-none');
+        $('.empty').addClass('d-none');
+      }else
+      {
+        $('.record_count').text();
+        $('.not-empty').addClass('d-none');
+        $('.empty').removeClass('d-none');
+      }
+      $('#ModelDelete').modal('show');
+    });
+  }
+  delete_all();
+

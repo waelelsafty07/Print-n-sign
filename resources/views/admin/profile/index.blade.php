@@ -16,25 +16,25 @@
 				<table class="table table-bordered table-striped rounded table-hover">
 					<tbody>
 						<tr>
-							<td>البريد الإلكتروني</td>
+							<td>Emaill</td>
 							<td>{{auth()->user()->email}}</td>
 						</tr>
 						<tr>
-							<td>الهاتف</td>
+							<td>Number Phone</td>
 							<td>
 								@if(auth()->user()->phone==null)
-									لا يوجد
+									Not Found
 								@else
 									{{auth()->user()->phone}}
 								@endif
 							</td>
 						</tr>
 						<tr>
-							<td>نوع الحساب</td>
+							<td>Power</td>
 							<td>{{auth()->user()->power}}</td>
 						</tr>
 						<tr>
-							<td>فعال</td>
+							<td>Activated</td>
 							<td>
 								@if(!auth()->user()->blocked)
 									<span class="fas fa-check-circle text-success"></span>
@@ -44,15 +44,15 @@
 
 						</td>
 						<tr>
-							<td>نبذة</td>
+							<td>Bio</td>
 							<td>
 								{{auth()->user()->bio}}
 							</td>
 						</tr>
 						
 						<tr>
-							<td>تحكم</td>
-							<td><a href="{{route('admin.profile.edit')}}" class="btn btn-light btn-sm border"><span class="fal fa-wrench"></span> تعديل</a></td>
+							<td>Control</td>
+							<td><a href="{{route('admin.profile.edit')}}" class="btn btn-light btn-sm border"><span class="fal fa-wrench"></span> Edite</a></td>
 						</tr>
 
 						

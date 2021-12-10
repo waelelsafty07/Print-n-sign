@@ -23,7 +23,7 @@ $flat_colors = collect([
                 $from = Carbon::parse($from);
                 $to = Carbon::parse($to);
                 @endphp
-                إحصائيات  {{$from->diffInDays($to)}} أيام
+                Statistics {{$from->diffInDays($to)}} days
             </div>
         </div>
      </div>
@@ -34,7 +34,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        إجرائات سريعة
+                    Quick Actions
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -45,7 +45,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-home font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    الموقع
+                                    Website
                                 </div>
                             </div>
                         </a>
@@ -58,7 +58,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-wrench font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    الإعدادات
+                                   Settings
                                 </div>
                             </div>
                         </a>
@@ -68,7 +68,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-user font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    ملفي
+                                    Profile
                                 </div>
                             </div>
                         </a>
@@ -78,7 +78,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-user-edit font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    تعديل ملفي
+                                   Edite Profile
                                 </div>
                             </div>
                         </a>
@@ -91,7 +91,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-bells font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    الإشعارات
+                                    Notification
                                 </div>
                             </div>
                         </a>
@@ -102,7 +102,7 @@ $flat_colors = collect([
                             <div class="col-12 p-0 text-center">
                                 <span class="fal fa-sign-out-alt font-5"></span> 
                                 <div class="col-12 p-0 text-center">
-                                    خروج
+                                    Exit
                                 </div>
                             </div>
                         </a>
@@ -117,7 +117,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        المستخدمين الجدد 
+                       New User
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -132,7 +132,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        أعلى الصفحات زيارة
+                    Top Pages Visit
                     </div> 
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -145,7 +145,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        انظمة التشغيل
+                    Operating systems
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -158,7 +158,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        المتصفحات
+                    Browsers
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -173,7 +173,7 @@ $flat_colors = collect([
             <div class="col-12 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        أعلى الأجهزة
+                    top Devices
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -199,7 +199,7 @@ $flat_colors = collect([
       },
       series: [
         {
-          name: "المستخدمين الجدد",
+          name: "New Users",
           data: [
             @foreach(array_reverse($data['new_users']['counts_list']) as $count )
           "{{$count}}",
@@ -229,7 +229,7 @@ $flat_colors = collect([
             @endforeach
             ],
             datasets: [{
-                label: 'المتصفحات',
+                label: 'Browser',
                 data: [
                 @foreach($data['top_browsers'] as $browser )
                     "{{$browser->count}}",
@@ -260,7 +260,7 @@ $flat_colors = collect([
             @endforeach
             ],
             datasets: [{
-                label: 'أنظمة التشغيل',
+                label: 'Operating System',
                 data: [
                 @foreach($data['top_operating_systems'] as $os )
                 "{{$os->count}}",
@@ -292,7 +292,7 @@ $flat_colors = collect([
             @endforeach
             ],
             datasets: [{
-                label: 'الصفحات',
+                label: 'Pages',
                 data: [
                 @foreach($data['top_pages'] as $page )
                 "{{$page->count}}",
@@ -323,7 +323,7 @@ $flat_colors = collect([
             @endforeach
             ],
             datasets: [{
-                label: 'المتصفحات',
+                label: 'Browsers',
                 data: [
                  @foreach($data['top_devices'] as $device )
                 "{{$device->count}}",

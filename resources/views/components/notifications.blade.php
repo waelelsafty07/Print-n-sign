@@ -41,7 +41,7 @@ $bg = $notification['read_at']==null ?"#f1f1f1":"#ffffff";
     <div class="col-12 px-0 text-center"> 
         <span class="fal fa-bell font-4" style="color:var(--bg-color-4);"></span>
         <div class="col-12 px-0 text-center mt-2">
-            لا توجد إشعارات حتى الآن
+        No notifications yet
         </div>
     </div>
 </div>

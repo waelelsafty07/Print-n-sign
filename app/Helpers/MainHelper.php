@@ -2,6 +2,8 @@
 // This class file to define all general functions
 namespace App\Helpers;
 
+
+
 class MainHelper {
 
     protected static $lowerLimit = 70;
@@ -9,6 +11,15 @@ class MainHelper {
     protected static $colorGap = 20;
     protected static $generated = array();
     
+    // public function redire($url = null)
+    // {
+        
+    //     if (!function_exists('redire')) {
+    //         return url('panel/' . $url);
+    //     }
+    // }
+
+
     public function notify_user(
         $options=[]
     ){
@@ -18,7 +29,7 @@ class MainHelper {
             'url'=>"",
             'methods'=>['database'],
             'image'=>"",
-            'btn_text'=>"عرض الإشعار"
+            'btn_text'=>"Show notification"
         ],$options);
         $user = \App\Models\User::where('id',$options['user_id'])->first();
         if($user!=null){

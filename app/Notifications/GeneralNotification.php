@@ -44,8 +44,8 @@ class GeneralNotification extends Notification implements ShouldQueue
 
         return (new MailMessage)
                  //->level($this->level)
-                ->subject("لديك إشعار جديد")
-                ->greeting("مرحباً") 
+                ->subject("New Notification")
+                ->greeting("Welcome") 
                 ->line($this->inline_content) 
                 ->action($this->btn_text, $this->action_url);
                     

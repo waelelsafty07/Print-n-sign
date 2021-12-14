@@ -13,6 +13,13 @@ class SubcategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function ajaxList($id)
+    {
+        //
+        // return $id;
+        $data= Subcategories::where('category_id', $id)->get();
+        return $data;
+    }
     public function index(SubcategoriesDatatables $subcategories, $id)
     {
         //

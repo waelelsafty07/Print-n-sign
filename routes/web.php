@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\HelperController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
@@ -11,12 +12,23 @@ use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SubcategoriesController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ContactsController;
+
 
 
 
 Auth::routes();
-Route::get('/', function () {return view('front.index');})->name('home');
+Route::get('/', [HomeController::class,'home'])->name('home');
+Route::get('/products', [HomeController::class,'products'])->name('products');
+Route::get('/products/{id}', [HomeController::class,'productsDetails'])->name('productsDetails');
+Route::get('/categories/{category_id}', [HomeController::class,'categoryProduct'])->name('categoryProduct');
+Route::get('/categories/{category_id}/subcategories/{subcategory_id}', [HomeController::class,'sc_product'])->name('sc_product');
+Route::get('/categories/{category_id}/subcategories', [HomeController::class,'categoryProduct'])->name('categoryProduct');
+// Route::get('/categories', [HomeController::class,'products'])->name('products');
+
 //Route::get('/test',[TestController::class,'index']);
+Route::post('/contact',[ContactsController::class,'store'])->middleware('recaptcha')->name('Contact_Store');
 
 
 Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->name('admin.')->group(function () {
@@ -71,8 +83,18 @@ Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->
         });
 
     });
+    Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/',[ProductsController::class,'index'])->name('index');
+        Route::get('/create',[ProductsController::class,'create'])->name('create');
+        Route::get('/ajax/{id}',[SubcategoriesController::class,'ajaxList'])->name('ajaxList');
+        Route::post('/post',[ProductsController::class,'store'])->name('store');
+    });
 
-     
+    Route::prefix('contact')->name('contact.')->group(function () {
+        Route::get('/',[ContactsController::class,'index'])->name('index');
+    });
+    
+    
 });
 
 

@@ -59,7 +59,7 @@ class SubCategoriesDatatables extends DataTable
                 'buttons' => [
                     [
                         'text' => '<i class="fa fa-plus"></i>  Create New SubCategory',
-                        'className' => 'btn btn-info','action'=>"function (){
+                        'className' => 'btn btn-primary','action'=>"function (){
                           window.location.href='".\URL::current()."/create';
                         }"],
                     [

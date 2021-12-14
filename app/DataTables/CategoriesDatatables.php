@@ -63,7 +63,7 @@ class CategoriesDatatables extends DataTable
                 'buttons' => [
                     [
                         'text' => '<i class="fa fa-plus"></i>  Create New Category',
-                        'className' => 'btn btn-info','action'=>"function (){
+                        'className' => 'btn btn-primary','action'=>"function (){
                           window.location.href='".\URL::current()."/create';
                         }"],
                     [

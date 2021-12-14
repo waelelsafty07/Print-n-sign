@@ -1,0 +1,2 @@
+<a href="<?php echo e(route('admin.categories.subcategory.index',$model->id)); ?>" class="btn btn-primary" style="color:white;">Go</a>
+<?php /**PATH /opt/lampp/htdocs/laravel/dashboard/resources/views/admin/products/subcategories/btn/category.blade.php ENDPATH**/ ?>

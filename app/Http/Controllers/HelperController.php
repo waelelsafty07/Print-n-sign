@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
 
 class HelperController extends Controller
 {
@@ -37,20 +38,24 @@ class HelperController extends Controller
     }
     public function upload_file(Request $request)
     {
+
+        
         return $this->store_file([
             'source'=>$request->file,
             'validation'=>"image",
-            'path_to_save'=>'/uploads/uploads/',
+            'path_to_save'=>'/uploads/website/',
             'type'=>'uploads', 
             'user_id'=>$request->user_id,
             'resize'=>[500,3000],
             'small_path'=>'small/',
             'visibility'=>'PUBLIC',
-            'file_system_type'=>'production',
+            'file_system_type'=>env('FILESYSTEM_DRIVER'),
             'watermark'=>true,
             'compress'=>'auto'
         ]);  
+        
     }
+
     public function robots(){
         $settings = \App\Models\Setting::firstOrFail();
         return response($settings->robots_txt)->header('Content-Type', 'text/plain');

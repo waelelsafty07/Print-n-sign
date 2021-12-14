@@ -76,15 +76,15 @@
                 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('files-viewer', [])->html();
-} elseif ($_instance->childHasBeenRendered('nto3pmt')) {
-    $componentId = $_instance->getRenderedChildComponentId('nto3pmt');
-    $componentTag = $_instance->getRenderedChildComponentTagName('nto3pmt');
+} elseif ($_instance->childHasBeenRendered('4rIENlA')) {
+    $componentId = $_instance->getRenderedChildComponentId('4rIENlA');
+    $componentTag = $_instance->getRenderedChildComponentTagName('4rIENlA');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('nto3pmt');
+    $_instance->preserveRenderedChild('4rIENlA');
 } else {
     $response = \Livewire\Livewire::mount('files-viewer', []);
     $html = $response->html();
-    $_instance->logRenderedChild('nto3pmt', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('4rIENlA', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -140,6 +140,16 @@ echo $html;
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2">
                                Categories
+                            </div> 
+                        </div>
+                    </a>
+                    <a href="<?php echo e(route('admin.products.index')); ?>" class="col-12 px-0">
+                        <div class="col-12 item px-0 d-flex " >
+                            <div style="width: 50px" class="px-3 text-center">
+                            <i class="fal fa-caret-right font-3"></i>
+                            </div>
+                            <div style="width: calc(100% - 50px)" class="px-2">
+                               Products
                             </div> 
                         </div>
                     </a>

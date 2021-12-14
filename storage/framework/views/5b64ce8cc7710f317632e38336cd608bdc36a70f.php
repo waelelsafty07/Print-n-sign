@@ -54,6 +54,7 @@
         return $('meta[name="title"]').attr('content');
     }
     var notificationDropdown = document.getElementById('notificationDropdown')
+    if(notificationDropdown)
     notificationDropdown.addEventListener('show.bs.dropdown', function() {
         $.ajax({
             method: "POST",
@@ -116,6 +117,7 @@
     get_nots();
 
     var open_files_viewer = document.getElementById('open-image-selector-modal');
+    if(open_files_viewer)
     open_files_viewer.addEventListener('show.bs.modal', function (event) {
        /* Livewire.emit('toggleOpen');*/
     }); 

@@ -21,7 +21,6 @@
             </div>
             <div class="form-group mt-2">
             {!! Form::select('category_id',App\Models\Categories::pluck('name','id'),$Subcategories->category_id, ['class'=>'form-control','placeholder'=>'Select Category']) !!}
-
             </div> 
             {!! Form::submit('Add',['class'=>'btn btn-primary mt-2','placeholder' => '..................']) !!}
             {!! Form::close() !!}

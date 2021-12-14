@@ -20,6 +20,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => ['*'],
+    'Access-Control-Allow-Methods'=> ['GET, POST, PUT, DELETE, OPTIONS'],
 
     'allowed_origins_patterns' => [],
 

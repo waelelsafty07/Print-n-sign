@@ -115,6 +115,16 @@
                             </div> 
                         </div>
                     </a>
+                    <a href="{{route('admin.products.index')}}" class="col-12 px-0">
+                        <div class="col-12 item px-0 d-flex " >
+                            <div style="width: 50px" class="px-3 text-center">
+                            <i class="fal fa-caret-right font-3"></i>
+                            </div>
+                            <div style="width: calc(100% - 50px)" class="px-2">
+                               Products
+                            </div> 
+                        </div>
+                    </a>
                     <a href="{{route('admin.settings.index')}}" class="col-12 px-0">
                         <div class="col-12 item px-0 d-flex " >
                             <div style="width: 50px" class="px-3 text-center">

@@ -12,7 +12,7 @@ use File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Mail;
-Carbon::setLocale('ar');
+Carbon::setLocale('en');
 use Storage;
 use Intervention\Image\ImageManager;
 use Imagick;

@@ -92,15 +92,7 @@ $page_keywords= isset($page_keywords)&&$page_keywords !=null? $page_keywords:$we
 <meta name="msapplication-TileImage" content="{{$website_settings['website_logo']}}">
 <script type="text/javascript">
     // Initialize the service worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceworker.js', {
-            scope: '.'
-        }).then(function (registration) { 
-            console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) { 
-            console.log('Laravel PWA: ServiceWorker registration failed: ', err);
-        });
-    }
+    
 </script>
 
 <link rel="icon" type="image/png" href="" /> 

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3527d9ea7f0713d98daae17eb86d49c8aab6fc2a',
+        'reference' => '0a6ed51b313c86676516b85889a1db4fb61a980a',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -164,6 +164,15 @@
             'install_path' => __DIR__ . '/../fruitcake/laravel-cors',
             'aliases' => array(),
             'reference' => 'a8ccedc7ca95189ead0e407c43b530dc17791d6a',
+            'dev_requirement' => false,
+        ),
+        'google/recaptcha' => array(
+            'pretty_version' => '1.2.4',
+            'version' => '1.2.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../google/recaptcha',
+            'aliases' => array(),
+            'reference' => '614f25a9038be4f3f2da7cbfd778dc5b357d2419',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -422,12 +431,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3527d9ea7f0713d98daae17eb86d49c8aab6fc2a',
+            'reference' => '0a6ed51b313c86676516b85889a1db4fb61a980a',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

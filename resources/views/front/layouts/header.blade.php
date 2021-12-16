@@ -121,7 +121,10 @@
                                                                         <ul>
                                                                             <li class="mega-list-title">
 
-                                                                                <a href="{{route('sc_product',['category_id'=>$category->id,'subcategory_id'=>$sub->id])}}">{{$sub->name}}</a>
+                                                                                <a href="{{route('sc_product',['category_id'=>$category->id,'subcategory_id'=>$sub->id])}}">{{$sub->name}}
+                                                                                <img src="{{$sub->subCategoryImage()}}" alt="{{$sub->name}}">
+                                                                                </a>
+                                                                                
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -163,12 +166,12 @@
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="shop-side-version-2.html">About Us</a></li>
+                                        <a href="{{route('AboutUs')}}">About Us</a></li>
 
                                     <li>
                                     <a href="shop-side-version-2.html">FAQ</a></li>
                                     <li>
-                                    <a href="shop-side-version-2.html">Contact</a></li>
+                                    <a href="#contactsection">Contact</a></li>
                                     
                                     <li class="has-dropdown">
 

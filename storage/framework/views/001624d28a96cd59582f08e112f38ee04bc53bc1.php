@@ -122,7 +122,11 @@
                                                                         <ul>
                                                                             <li class="mega-list-title">
 
-                                                                                <a href="<?php echo e(route('sc_product',['category_id'=>$category->id,'subcategory_id'=>$sub->id])); ?>"><?php echo e($sub->name); ?></a>
+                                                                                <a href="<?php echo e(route('sc_product',['category_id'=>$category->id,'subcategory_id'=>$sub->id])); ?>"><?php echo e($sub->name); ?>
+
+                                                                                <img src="<?php echo e($sub->subCategoryImage()); ?>" alt="<?php echo e($sub->name); ?>">
+                                                                                </a>
+                                                                                
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -164,12 +168,12 @@
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="shop-side-version-2.html">About Us</a></li>
+                                        <a href="<?php echo e(route('AboutUs')); ?>">About Us</a></li>
 
                                     <li>
                                     <a href="shop-side-version-2.html">FAQ</a></li>
                                     <li>
-                                    <a href="shop-side-version-2.html">Contact</a></li>
+                                    <a href="#contactsection">Contact</a></li>
                                     
                                     <li class="has-dropdown">
 

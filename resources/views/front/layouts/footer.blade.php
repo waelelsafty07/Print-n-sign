@@ -45,10 +45,10 @@
                                             <ul>
                                                 <li>
 
-                                                    <a href="about.html">About us</a></li>
+                                                    <a href="{{route('AboutUs')}}">About us</a></li>
                                                 <li>
 
-                                                    <a href="contact.html">Contact Us</a></li>
+                                                    <a href="#contactsection">Contact Us</a></li>
                                                 <li>
 
                                                     <a href="index.html">Sitemap</a></li>

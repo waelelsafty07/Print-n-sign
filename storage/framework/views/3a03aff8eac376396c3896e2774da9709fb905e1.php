@@ -53,6 +53,11 @@
 
 														<a href="<?php echo e(route('productsDetails',$product->id)); ?>"><?php echo e($product->products_name); ?></a>
 													</span>
+                                                    <span class="product-o__description">
+                                                    <?php echo e($product->small_description); ?>
+
+														
+													</span>
 												
 												</div>
 											</div>

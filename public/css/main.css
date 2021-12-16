@@ -116,7 +116,7 @@ thead th {
 .ck[dir=ltr],
 .ck,
 .ck * {
-    text-align: right;
+    text-align: left;
 }
 .main-box{
     background: #fff;

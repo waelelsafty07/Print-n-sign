@@ -12,7 +12,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <?php echo Form::open(['url'=>route('admin.categories.destroy',$id),'method'=>'DELETE']); ?>
+      <?php echo Form::open(['url'=>route('admin.products.destroy',$id),'method'=>'DELETE']); ?>
 
       <div class="modal-body">
 

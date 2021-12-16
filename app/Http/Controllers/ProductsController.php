@@ -23,7 +23,7 @@ class ProductsController extends Controller
     public function index(ProductsDatatables $products)
     {
         //
-        return $products->render('admin.categories.index',['page_title'=>'Categories']);
+        return $products->render('admin.products.index',['page_title'=>'Products']);
     }
 
     /**
@@ -146,6 +146,11 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Products::where('id', $id)->first();
+        $points = points::where('product_id', $product->id)->get();
+        $Imageproducts = Imageproducts::where('product_id', $product->id)->get();
+        $page_title = 'Edit Products';
+        return view('admin.products.edit', compact(['product','page_title','points','Imageproducts']));
     }
 
     /**
@@ -158,6 +163,46 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // return $request;
+        $request->validate([
+            'name'=>"required|min:3|max:190",
+            'category_id'=>'required',
+            'subcategory_id'=>'required',
+            'points'=>'required',
+            'description'=>'required',
+            'small_description'=>'required',
+        ]);
+        //points
+
+        $Product_id = Products::find($id)->update([
+            'products_name'=>$request->name,
+            'category_id'=>$request->category_id,
+            'subCategory_id'=>$request->subcategory_id,
+            'small_description'=>$request->small_description,
+            'description'=>$request->description,
+            
+        ]);
+
+        //points
+        // return $request->points;
+        if(!empty($request->points))
+        {
+            points::where('product_id',$id)->delete();
+                
+        }
+        foreach ($request->points as $arr)
+        {
+            if(!empty($arr))
+            {
+                points::where('product_id',$id)->create([
+                    'name_points'=>$arr,
+                    'product_id'=>$id,
+                ]);
+            }
+        }
+        
+        notify()->success('Successful Operation','Products Updated Successfully');
+        return redirect()->back();
     }
 
     /**
@@ -168,6 +213,25 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
+
         //
+        Products::find($id)->delete();
+        notify()->success('Successful Operation','Operation Deleted Successfully');
+        return redirect()->back();
+    }
+    public function multiple(Request $request)
+    {
+        // return $request;
+        if(is_array(request('item')))
+        {
+            Products::destroy(request('item'));
+        }else
+        {
+            Products::find(request('item'))->delete();
+        }
+        notify()->success('Successful Operation','Operation Deleted Successfully');
+        return redirect()->back();
     }
 }
+
+

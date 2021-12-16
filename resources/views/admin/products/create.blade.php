@@ -51,7 +51,7 @@
           <h3 class="card-title">{{$page_title}}</h3>
           </div>
         <div class="card-body">
-          {!! Form::open(['url'=>route('admin.products.store'), 'files' => true]) !!}
+          {!! Form::open(['url'=>route('admin.products.store'), 'method'=>'POST','files' => true]) !!}
           <form livewire:files-viewer />
                   @csrf
                   

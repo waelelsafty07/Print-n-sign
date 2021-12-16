@@ -21,12 +21,14 @@ class SubCategoriesDatatables extends DataTable
     {
         return datatables($query)
         ->addColumn('checkbox', 'admin.categories.subcategories.btn.checkbox')
+        ->addColumn('image', 'admin.categories.subcategories.img')
         ->addColumn('edit', 'admin.categories.subcategories.btn.edit')
         ->addColumn('delete', 'admin.categories.subcategories.btn.delete')
         ->rawColumns([
             'edit',
             'delete',
             'checkbox',
+            'image'
         ]);
     }
 
@@ -92,6 +94,10 @@ class SubCategoriesDatatables extends DataTable
                 'name' => 'name',
                 'data' => 'name',
                 'title' => 'Name',
+            ],[
+                'name' => 'image',
+                'data' => 'image',
+                'title' => 'Image',
             ],  [
                 'name' => 'edit',
                 'data' => 'edit',

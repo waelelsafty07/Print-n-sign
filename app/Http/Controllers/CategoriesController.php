@@ -118,7 +118,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         //
-        $category = Categories::find($id)->firstOrCreate();
+        $category = Categories::where('id', $id)->first();
         $page_title = 'Edit Category';
         return view('admin.categories.edit', compact(['category','page_title']));
     }
@@ -148,10 +148,10 @@ class CategoriesController extends Controller
                 'file_system_type'=>env('FILESYSTEM_DRIVER','local'),
                 'compress'=>'auto'
             ])['filename'];
-            \App\Models\Categories::query()->update(['image'=>$file]);
+            \App\Models\Categories::find($id)->update(['image'=>$file]);
         }
 
-        \App\Models\Categories::query()->update([
+        \App\Models\Categories::find($id)->update([
             'name'=>$request->name,
         ]);
         notify()->success('Category updated successfully','Successful Operation');

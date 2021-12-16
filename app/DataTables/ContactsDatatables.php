@@ -100,6 +100,6 @@ class ContactsDatatables extends DataTable
      */
     protected function filename()
     {
-        return 'CategoriesDatatables_' . date('YmdHis');
+        return 'ContactsDatatables_' . date('YmdHis');
     }
 }

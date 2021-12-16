@@ -26,6 +26,14 @@ class HomeController extends Controller
             $images = Imageproducts::where('product_id',$id)->get();
             return view('front.productsdetails',compact(['categories','subcategories','products','images']));
     }
+    public function about_us()
+    {
+        $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
+        $categories = Categories::orderBy('id', 'asc')->get();
+        $products = Products::orderBy('id', 'asc')->get();
+        return view('front.aboutus',compact(['categories','subcategories','products']));
+
+    }
         public function categoryProduct($category_id){
             $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
             $categories = Categories::orderBy('id', 'asc')->get();

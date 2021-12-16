@@ -14,64 +14,63 @@
     }
 </style>
 @endsection
-@section('after-body')
-<button data-bs-toggle="modal" data-bs-target="#changeAvatar" id="changeAvatarBtn" class="d-none"></button>
-<div class="modal fade" id="changeAvatar" tabindex="-1" aria-labelledby="changeAvatarLabel" aria-hidden="true">
-  <div class="modal-dialog" style="width:394px;max-width: 100%">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="changeAvatarLabel">Change Category Picture</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      
-        <div class="col-12 p-2" style="background: #fff;overflow: hidden;position: relative;max-width: 100%!important">
-            <div class="col-12 ltr">
-                <img class="my-image" src="" id="avatar-image-selector" style="z-index: 45454" />
-            </div>
-            <div class="col-12 text-left
-             mt-3">
-                <button class="btn btn-secondary mx-1 font-1" data-bs-dismiss="modal" aria-label="Close">Close</button>
-                <button class="btn btn-primary mx-1 font-1 save-image" >Change Picture</button>
-            </div>
-        </div>
-
-      </div> 
-    </div>
-  </div>
-</div>
-@endsection
 @section('content')
 
 <section class="content">
   <div class="container-fluid">
+  <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">{{$page_title}}</h3>
+          </div>
+        <div class="card-body">
+          {!! Form::open(['url'=>route('admin.products.update',$product->id),'method'=>'PUT', 'files' => true]) !!}
+          <form livewire:files-viewer />
+                  @csrf
+                  
     <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-header">
-              <h3 class="card-title">{{$page_title}}</h3>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
 
-            {!! Form::open(['url'=>route('admin.categories.update',$category->id),'method'=>'PUT', 'files' => true]) !!}
-                    @csrf
-            <div class="form-group mt-2">
-              {!! Form::label('name', 'Category Name') !!}
-              {!! Form::text('name',$category->name,['class'=>'form-control']) !!}
-            </div>
-            <div class="form-group mt-2">
-                {!!  Form::file('image', ['id'=>'avatar-image', 'class'=>'form-control'])!!}
-                {!!  Form::hidden('avatar', $category->CategoryImage(), ['id'=>'encoded_image'])!!}
-            </div> 
-            <img src="" style="width:150px;max-width: 100%;   padding: 2rem 0; float: right;" id="getUserAvatar">
-            {!! Form::submit('Add',['class'=>'btn btn-primary mt-2','placeholder' => '..................']) !!}
-            {!! Form::close() !!}
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
+          <div class="col-6">
+              <div class="form-group mt-2">
+                {!! Form::label('name', 'Product Name*') !!}
+                {!! Form::text('name',$product->products_name,['class'=>'form-control']) !!}
+              </div>
+              <div class="form-group mt-2">
+                {!! Form::label('small_description', 'Small_description*') !!}
+                {!! Form::text('small_description',$product->small_description,['class'=>'form-control']) !!}
+              </div>
       </div>
+
+
+      <div class="col-6">
+
+              <div class="form-group mt-2">
+                  {!! Form::label('category_id', 'Category*') !!}
+                {!! Form::select('category_id',App\Models\Categories::pluck('name','id'),$product->category_id, ['class'=>'form-control','id'=>'SelectorCategory','placeholder'=>'Select Category']) !!}
+
+              </div>
+              <div id ="SelectorSubCategory"class="form-group mt-2">
+                {!! Form::label('subcategory_id', 'SubCategory*') !!}
+                {!! Form::select('subcategory_id',App\Models\Subcategories::pluck('name','id'),$product->subCategory_id, ['class'=>'form-control','id'=>'subcategory_id','placeholder'=>'Select Category']) !!}
+              </div>
+              <div class="form-group mt-2" id ="points-highlight">
+                {!! Form::label('points', 'Point Highlight*') !!}
+                @foreach($points as $point)
+                {!! Form::text('points[]',$point->name_points,['class'=>'form-control']) !!}
+                @endforeach
+              </div>
+              <a class="btn btn-primary mt-2" id="btn-plus"><i class="fa fa-plus"></i></a>
+              </div>
+              <div class="form-group mt-2">
+                {!! Form::label('description', 'Description*') !!}
+                {!! Form::textarea('description',$product->description,['class'=>'form-control']) !!}
+              </div>
+             
+            </div>
+            
+            {!! Form::submit('Add',['class'=>'btn btn-primary mt-2','placeholder' => '..................']) !!}
+                {!! Form::close() !!}
+      </div>
+
       <!-- /.col -->
     </div>
     <!-- /.row -->
@@ -80,9 +79,19 @@
 </section>
 @endsection
 @section('scripts')
+
+<?php
+
+
+          
+?>
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.4/croppie.min.js"></script>
 <script type="text/javascript">
+  $('#btn-plus').on('click', function(){ 
+    $('#points-highlight').append($('<input class="form-control mt-1" name="points[]" type="text">'));
+  });
 $(document).ready(function() { 
         var $uploadCrop = $('#avatar-image-selector').croppie({
             aspectRatio:1,

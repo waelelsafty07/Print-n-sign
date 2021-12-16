@@ -25,6 +25,7 @@ Route::get('/products/{id}', [HomeController::class,'productsDetails'])->name('p
 Route::get('/categories/{category_id}', [HomeController::class,'categoryProduct'])->name('categoryProduct');
 Route::get('/categories/{category_id}/subcategories/{subcategory_id}', [HomeController::class,'sc_product'])->name('sc_product');
 Route::get('/categories/{category_id}/subcategories', [HomeController::class,'categoryProduct'])->name('categoryProduct');
+Route::get('/about-us', [HomeController::class,'about_us'])->name('AboutUs');
 // Route::get('/categories', [HomeController::class,'products'])->name('products');
 
 //Route::get('/test',[TestController::class,'index']);
@@ -88,6 +89,12 @@ Route::prefix('admin')->middleware(['auth','CheckRole:ADMIN','ActiveAccount'])->
         Route::get('/create',[ProductsController::class,'create'])->name('create');
         Route::get('/ajax/{id}',[SubcategoriesController::class,'ajaxList'])->name('ajaxList');
         Route::post('/post',[ProductsController::class,'store'])->name('store');
+
+        
+        Route::get('/edit/{id}',[ProductsController::class,'edit'])->name('edit');
+        Route::put('/edit/{id}/edit',[ProductsController::class,'update'])->name('update');
+        Route::delete('/delete',[ProductsController::class,'multiple'])->name('multiple');
+        Route::delete('/deleteOne/{id}',[ProductsController::class,'destroy'])->name('destroy');
     });
 
     Route::prefix('contact')->name('contact.')->group(function () {

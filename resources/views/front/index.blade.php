@@ -13,9 +13,9 @@
                                     <div class="slider-content slider-content--animation">
 									
 
-									<span class="content-span-2 u-c-white">Print n Signs</span>
-									<span class="content-span-3 u-c-white">Highest Quality, Cheapest Prices, Fastest Turnaround in the Town!</span>
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
+									<span class="content-span-2 u-c-secondary">Print n Signs</span>
+									<span class="content-span-3 u-c-secondary">Highest Quality, Cheapest Prices, Fastest Turnaround in the Town!</span>
+                                        <a class="shop-now-link btn--e-brand" href="{{route('products')}}">SHOP NOW</a></div>
                                 </div>
                             </div>
                         </div>
@@ -27,8 +27,8 @@
                                     <div class="slider-content slider-content--animation">
 									
 									<span class="content-span-2 u-c-white">🤙{{$settings->phone}}</span>
-									<span class="content-span-3 u-c-white"></span>
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">Contact Us</a></div>
+									<span class="content-span-3 u-c-white">Contact Us</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,12 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="slider-content slider-content--animation">
-										<a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
+                                        <span class="content-span-2 u-c-secondary">Why Print n Signage?</span>
+                                        <span class="content-span-4 u-c-secondary">SPEED</span>
+                                        <span class="content-span-3 u-c-secondary">We believe that what makes you fast, will make you successful. </span>
+                                        <span class="content-span-3 u-c-secondary">We are fast and getting faster. </span>
+                                        <span class="content-span-3 u-c-secondary">We are obsessed with clocks, not calendars. From 1 to 1 Million, Hudson Printing can help you go faster.</span>
+
                                 </div>
                             </div>
                         </div>
@@ -140,24 +145,23 @@
 
 													<span class="product-o__category">
 
-														<a href="{{route('productsDetails',$product->id)}}">Electronics</a>
+														<a href="{{route('productsDetails',$product->id)}}">{{\App\Models\Categories::find($product->category_id)->name}}</a>
 													</span>
 
 													<span class="product-o__name">
 
 														<a href="{{route('productsDetails',$product->id)}}">{{$product->products_name}}</a>
 													</span>
-												
+                                                    <span class="product-o__description">
+                                                    {{$product->small_description}}
+													</span>
+                                                    
 												</div>
 											</div>
 											@endforeach
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <div class="load-more">
-
-                                    <button class="btn btn--e-brand" type="button">Load More</button></div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

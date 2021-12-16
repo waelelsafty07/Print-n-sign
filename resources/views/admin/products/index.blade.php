@@ -12,7 +12,7 @@
           <!-- /.card-header -->
           <div class="card-body">
 
-          {!! Form::open(['id'=>'form_data','url'=>route('admin.categories.multiple'),'method'=>'delete']) !!}
+          {!! Form::open(['id'=>'form_data','url'=>route('admin.products.multiple'),'method'=>'delete']) !!}
             {!! $dataTable->table([
               'class'=>' table table-striped table-hover  table-bordered',
             ],

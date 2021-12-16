@@ -11,6 +11,7 @@ class NotificationsController extends Controller
         $notifications = \Auth::user()->notifications()->simplePaginate(); 
         return view('admin.notifications.index',compact('notifications'));
     }
+    
     public function notifications_see(Request $request){
         session(['seen_notifications'=>0]);
         auth()->user()->unreadNotifications->markAsRead();

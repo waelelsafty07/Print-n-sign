@@ -54,6 +54,10 @@
 
 														<a href="{{route('productsDetails',$product->id)}}">{{$product->products_name}}</a>
 													</span>
+                                                    <span class="product-o__description">
+                                                    {{$product->small_description}}
+														
+													</span>
 												
 												</div>
 											</div>

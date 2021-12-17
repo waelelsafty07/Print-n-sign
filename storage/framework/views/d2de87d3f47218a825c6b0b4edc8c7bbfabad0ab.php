@@ -4,51 +4,52 @@
     <!--====== Main App ======-->
 	<div class="app-content">
 		<div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
-                <div class="owl-carousel primary-style-1" id="hero-slider">
-                    <div class="hero-slide hero-slide--1" style="background-image: url(/images/slide-1.jpg);">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-									
+            <div class="owl-carousel primary-style-1" id="hero-slider">
+                <div class="hero-slide hero-slide--1" style="background-image: url(/images/slide-1.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider-content slider-content--animation">
+                                
 
-									<span class="content-span-2 u-c-secondary">Print n Signs</span>
-									<span class="content-span-3 u-c-secondary">Highest Quality, Cheapest Prices, Fastest Turnaround in the Town!</span>
-                                        <a class="shop-now-link btn--e-brand" href="<?php echo e(route('products')); ?>">SHOP NOW</a></div>
-                                </div>
+                                <span class="content-span-2 u-c-secondary">Print n Signs</span>
+                                <span class="content-span-3 u-c-secondary">Highest Quality, Cheapest Prices, Fastest Turnaround in the Town!</span>
+                                    <a class="shop-now-link btn--e-brand" href="<?php echo e(route('products')); ?>">SHOP NOW</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="hero-slide hero-slide--2"style="background-image: url(/images/slide-2.jpg);">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-									
-									<span class="content-span-2 u-c-white">🤙<?php echo e($settings->phone); ?></span>
-									<span class="content-span-3 u-c-white">Contact Us</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide hero-slide--3"style="background-image: url(/images/slide-3.jpg);">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-                                        <span class="content-span-2 u-c-secondary">Why Print n Signage?</span>
-                                        <span class="content-span-4 u-c-secondary">SPEED</span>
-                                        <span class="content-span-3 u-c-secondary">We believe that what makes you fast, will make you successful. </span>
-                                        <span class="content-span-3 u-c-secondary">We are fast and getting faster. </span>
-                                        <span class="content-span-3 u-c-secondary">We are obsessed with clocks, not calendars. From 1 to 1 Million, Hudson Printing can help you go faster.</span>
-
+                </div>
+                <div class="hero-slide hero-slide--2"style="background-image: url(/images/slide-2.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider-content slider-content--animation">
+                                
+                                <span class="content-span-2 u-c-white">🤙<?php echo e($settings->phone); ?></span>
+                                <span class="content-span-3 u-c-white">Contact Us</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="hero-slide hero-slide--3"style="background-image: url(/images/slide-3.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider-content slider-content--animation">
+                                    <span class="content-span-2 u-c-secondary">Why Print n Signage?</span>
+                                    <span class="content-span-4 u-c-secondary">SPEED</span>
+                                    <span class="content-span-3 u-c-secondary">We believe that what makes you fast, will make you successful. </span>
+                                    <span class="content-span-3 u-c-secondary">We are fast and getting faster. </span>
+                                    <span class="content-span-3 u-c-secondary">We are obsessed with clocks, not calendars. From 1 to 1 Million, Hudson Printing can help you go faster.</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        </div>
             <!--====== End - Primary Slider ======-->
 
 

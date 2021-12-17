@@ -41,10 +41,16 @@ class SettingController extends Controller
             'privacy_page'=>$request->privacy_page,
             'terms_page'=>$request->terms_page,
             'about_page'=>$request->about_page,
+            'faq_page'=>$request->faq_page,
             'contact_page'=>$request->contact_page,
             'header_code'=>$request->header_code,
             'footer_code'=>$request->footer_code,
             'robots_txt'=>$request->robots_txt,
+            'Banner_menu'=>$request->Banner_menu,
+            'Banner_left'=>$request->Banner_left,
+            'Banner_right'=>$request->Banner_right,
+            'Banner_bottom'=>$request->Banner_bottom,
+            'Banner_mid'=>$request->Banner_mid,
         ]);
         
         if($request->hasFile('website_logo')){

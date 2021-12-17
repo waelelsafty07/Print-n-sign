@@ -1,4 +1,5 @@
-<footer>
+
+        <footer>
             <div class="outer-footer">
                 <div class="container">
                     <div class="row">
@@ -49,15 +50,11 @@
                                                 <li>
 
                                                     <a href="#contactsection">Contact Us</a></li>
+                                                
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a></li>
-                                                <li>
-
-                                                    <a href="dash-my-order.html">Delivery</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Store</a></li>
+                                                    <a href="<?php echo e(route('products')); ?>">Products</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

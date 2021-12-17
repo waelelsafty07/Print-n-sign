@@ -49,6 +49,7 @@ class CreateSettingsTable extends Migration
             $table->longText('terms_page')->nullable();
             $table->longText('about_page')->nullable();
             $table->longText('contact_page')->nullable();
+            $table->longText('faq_page')->nullable();
 
             //other links
             $table->text('another_link1')->nullable();
@@ -63,7 +64,12 @@ class CreateSettingsTable extends Migration
             $table->longText('header_code')->nullable();
             $table->longText('footer_code')->nullable();
             $table->longText('robots_txt')->nullable();
-
+            // Banner_ads
+            $table->longText('Banner_menu')->nullable();
+            $table->longText('Banner_left')->nullable();
+            $table->longText('Banner_right')->nullable();
+            $table->longText('Banner_bottom')->nullable();
+            $table->longText('Banner_mid')->nullable();
 
             $table->timestamps();
         });

@@ -13,6 +13,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
+header("Set-Cookie: cross-site-cookie=whatever; SameSite=None; Secure");
+header("Set-Cookie: flavor=choco; SameSite=Lax");
 
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)

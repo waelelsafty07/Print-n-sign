@@ -171,7 +171,7 @@
                                         <a href="<?php echo e(route('AboutUs')); ?>">About Us</a></li>
 
                                     <li>
-                                    <a href="shop-side-version-2.html">FAQ</a></li>
+                                    <a href="<?php echo e(route('faq')); ?>">FAQ</a></li>
                                     <li>
                                     <a href="#contactsection">Contact</a></li>
                                     
@@ -185,10 +185,10 @@
                                         <ul style="width:170px">
                                             <li>
 
-                                                <a href="cart.html">Privacy policy</a></li>
+                                                <a href="<?php echo e(route('privacy')); ?>">Privacy policy</a></li>
                                             <li>
 
-                                                <a href="wishlist.html">Terms of use</a></li>
+                                                <a href="<?php echo e(route('terms')); ?>">Terms of use</a></li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -231,6 +231,14 @@
                 </div>
             </nav>
             <!--====== End - Nav 2 ======-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo $settings->Banner_menu; ?>
+
+                    </div>
+                </div>
+            </div>
         </header>
         <!--====== End - Main Header ======-->
 <?php /**PATH /opt/lampp/htdocs/laravel/dashboard/resources/views/front/layouts/header.blade.php ENDPATH**/ ?>

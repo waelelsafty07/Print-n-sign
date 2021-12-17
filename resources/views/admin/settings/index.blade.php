@@ -293,6 +293,14 @@
 
 	 	</div>
 	 	<div class="col-12 row p-0 taber" id="pages-tab">
+		 <div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 FAQ
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea  name="faq_page" class="form-control editor with-file-explorer">{{$settings->faq_page}}</textarea>
+	 			</div> 
+	 		</div>
 	 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
 				 Privacy policy
@@ -353,6 +361,46 @@
 	 			</div>
 	 			<div class="col-12 col-lg-9 px-2">
 	 				<textarea name="robots_txt" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->robots_txt}}</textarea>
+	 			</div> 
+	 		</div>
+			<div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 Banner Menu
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea name="Banner_menu" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->Banner_menu}}</textarea>
+	 			</div> 
+	 		</div>
+			 <div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 Banner Left
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea name="Banner_left" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->Banner_left}}</textarea>
+	 			</div> 
+	 		</div>
+			 <div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 Banner Right
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea name="Banner_right" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->Banner_right}}</textarea>
+	 			</div> 
+	 		</div>
+			 <div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 Banner Bottom
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea name="Banner_bottom" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->Banner_bottom}}</textarea>
+	 			</div> 
+	 		</div>
+			 <div class="col-12 px-0 d-flex mb-3 row pb-3">
+	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+				 Banner Mid
+	 			</div>
+	 			<div class="col-12 col-lg-9 px-2">
+	 				<textarea name="Banner_mid" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings->Banner_mid}}</textarea>
 	 			</div> 
 	 		</div>
 	 	</div>

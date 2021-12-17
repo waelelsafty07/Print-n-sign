@@ -46,16 +46,35 @@
                                 
                                 <div class="u-s-m-b-15">
 
-                                    <span class="pd-detail__preview-desc">{{$products[0]->small_description}}</span></div>
+                                    <span class="pd-detail__preview-desc">{{$products[0]->small_description}}</span>
+                                </div>
+                                <div class="u-s-m-b-15">
+
+                                    <span class="pd-detail__preview-desc">{{$products[0]->description}}</span>
+                                </div>
                                 
                                 <div class="u-s-m-b-15">
                                     <div class="pd-detail__inline">
 
                                         <span class="pd-detail__click-wrap"><i class="far fa-envelope u-s-m-r-6"></i>
 
-                                            <a href="signin.html">Email Us </a>
+                                            <a href="mailto:{{$settings->contact_email}}">Email Us </a>
 
                                         </div>
+                                </div>
+                                <div class="u-s-m-b-15 mt-5">
+                                    <div class="pd-detail__label u-s-m-b-8" style="color:black;">
+                                        Highlights:-
+                                    </div>
+                                    <ul class="mt-2 ml-2">
+                                    @foreach($points as $point)
+                                    <li>
+                                        <i class="fas fa-check-circle u-s-m-r-8" style="color:green;"></i>
+                                        {{$point->name_points}}
+                                    </li>
+                                    @endforeach
+                                    </ul>
+                                    
                                 </div>
                                 <div class="u-s-m-b-15">
                                     <ul class="pd-social-list">

@@ -1,6 +1,13 @@
 
 <?php echo $__env->make('front.map.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+<div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <?php echo $settings->Banner_bottom; ?>
 
+                </div>
+            </div>
+        </div>
             <!--====== End - Section 3 ======-->
             <!--====== Section 4 ======-->
             <div class="u-s-p-b-60">

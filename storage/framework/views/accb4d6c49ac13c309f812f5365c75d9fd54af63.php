@@ -45,16 +45,36 @@
                                 
                                 <div class="u-s-m-b-15">
 
-                                    <span class="pd-detail__preview-desc"><?php echo e($products[0]->small_description); ?></span></div>
+                                    <span class="pd-detail__preview-desc"><?php echo e($products[0]->small_description); ?></span>
+                                </div>
+                                <div class="u-s-m-b-15">
+
+                                    <span class="pd-detail__preview-desc"><?php echo e($products[0]->description); ?></span>
+                                </div>
                                 
                                 <div class="u-s-m-b-15">
                                     <div class="pd-detail__inline">
 
                                         <span class="pd-detail__click-wrap"><i class="far fa-envelope u-s-m-r-6"></i>
 
-                                            <a href="signin.html">Email Us </a>
+                                            <a href="mailto:<?php echo e($settings->contact_email); ?>">Email Us </a>
 
                                         </div>
+                                </div>
+                                <div class="u-s-m-b-15 mt-5">
+                                    <div class="pd-detail__label u-s-m-b-8" style="color:black;">
+                                        Highlights:-
+                                    </div>
+                                    <ul class="mt-2 ml-2">
+                                    <?php $__currentLoopData = $points; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $point): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li>
+                                        <i class="fas fa-check-circle u-s-m-r-8" style="color:green;"></i>
+                                        <?php echo e($point->name_points); ?>
+
+                                    </li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </ul>
+                                    
                                 </div>
                                 <div class="u-s-m-b-15">
                                     <ul class="pd-social-list">

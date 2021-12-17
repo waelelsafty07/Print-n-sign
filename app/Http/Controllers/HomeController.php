@@ -19,12 +19,35 @@ class HomeController extends Controller
      *
      * @return void
      */
+    public function terms(){
+        $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
+        $categories = Categories::orderBy('id', 'asc')->get();
+        $products = Products::orderBy('id', 'asc')->get();
+        return view('front.terms',compact(['categories','subcategories','products']));
+        
+    }
+    public function privacy(){
+        $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
+        $categories = Categories::orderBy('id', 'asc')->get();
+        $products = Products::orderBy('id', 'asc')->get();
+        return view('front.privacy',compact(['categories','subcategories','products']));
+        
+    }
+    public function faq(){
+        $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
+        $categories = Categories::orderBy('id', 'asc')->get();
+        $products = Products::orderBy('id', 'asc')->get();
+        return view('front.faq',compact(['categories','subcategories','products']));
+        
+    }
     public function productsDetails($id){
         $subcategories = Subcategories::orderBy('category_id', 'asc')->get();
             $categories = Categories::orderBy('id', 'asc')->get();
             $products = Products::where('id',$id)->get();
             $images = Imageproducts::where('product_id',$id)->get();
-            return view('front.productsdetails',compact(['categories','subcategories','products','images']));
+            $points = points::where('product_id',$id)->get();
+            
+            return view('front.productsdetails',compact(['categories','subcategories','products','images','points']));
     }
     public function about_us()
     {

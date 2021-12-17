@@ -169,7 +169,7 @@
                                         <a href="{{route('AboutUs')}}">About Us</a></li>
 
                                     <li>
-                                    <a href="shop-side-version-2.html">FAQ</a></li>
+                                    <a href="{{route('faq')}}">FAQ</a></li>
                                     <li>
                                     <a href="#contactsection">Contact</a></li>
                                     
@@ -183,10 +183,10 @@
                                         <ul style="width:170px">
                                             <li>
 
-                                                <a href="cart.html">Privacy policy</a></li>
+                                                <a href="{{route('privacy')}}">Privacy policy</a></li>
                                             <li>
 
-                                                <a href="wishlist.html">Terms of use</a></li>
+                                                <a href="{{route('terms')}}">Terms of use</a></li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -229,5 +229,12 @@
                 </div>
             </nav>
             <!--====== End - Nav 2 ======-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {!! $settings->Banner_menu !!}
+                    </div>
+                </div>
+            </div>
         </header>
         <!--====== End - Main Header ======-->

@@ -54,7 +54,7 @@
 
 <div class="preloader is-active">
         <div class="preloader__wrap">
-            <img class="preloader__img" src="images/preloader.png" alt=""></div>
+            <img class="preloader__img" src="<?php echo e(asset('/front/images/preloader.png')); ?>" alt=""></div>
     </div>
 
     <?php echo $__env->yieldContent('after-body'); ?>

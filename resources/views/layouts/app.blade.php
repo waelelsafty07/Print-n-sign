@@ -52,7 +52,7 @@
 
 <div class="preloader is-active">
         <div class="preloader__wrap">
-            <img class="preloader__img" src="images/preloader.png" alt=""></div>
+            <img class="preloader__img" src="{{asset('/front/images/preloader.png')}}" alt=""></div>
     </div>
 
     @yield('after-body')

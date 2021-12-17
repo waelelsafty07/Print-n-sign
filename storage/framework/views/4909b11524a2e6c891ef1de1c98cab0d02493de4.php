@@ -49,7 +49,7 @@
           <h3 class="card-title"><?php echo e($page_title); ?></h3>
           </div>
         <div class="card-body">
-          <?php echo Form::open(['url'=>route('admin.products.store'), 'files' => true]); ?>
+          <?php echo Form::open(['url'=>route('admin.products.store'), 'method'=>'POST','files' => true]); ?>
 
           <form livewire:files-viewer />
                   <?php echo csrf_field(); ?>

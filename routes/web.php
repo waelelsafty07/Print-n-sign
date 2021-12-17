@@ -20,12 +20,15 @@ use App\Http\Controllers\ContactsController;
 
 Auth::routes();
 Route::get('/', [HomeController::class,'home'])->name('home');
+Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::get('/products', [HomeController::class,'products'])->name('products');
 Route::get('/products/{id}', [HomeController::class,'productsDetails'])->name('productsDetails');
 Route::get('/categories/{category_id}', [HomeController::class,'categoryProduct'])->name('categoryProduct');
 Route::get('/categories/{category_id}/subcategories/{subcategory_id}', [HomeController::class,'sc_product'])->name('sc_product');
 Route::get('/categories/{category_id}/subcategories', [HomeController::class,'categoryProduct'])->name('categoryProduct');
 Route::get('/about-us', [HomeController::class,'about_us'])->name('AboutUs');
+Route::get('/terms', [HomeController::class,'terms'])->name('terms');
+Route::get('/privacy', [HomeController::class,'privacy'])->name('privacy');
 // Route::get('/categories', [HomeController::class,'products'])->name('products');
 
 //Route::get('/test',[TestController::class,'index']);

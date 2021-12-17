@@ -1,2 +1,0 @@
-<input type="checkbox" name="item[]" class="item_checked" value="<?php echo e($model->id); ?>"/>
-<?php /**PATH /opt/lampp/htdocs/laravel/dashboard/resources/views/admin/products/btn/checkbox.blade.php ENDPATH**/ ?>
